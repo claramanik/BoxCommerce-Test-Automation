@@ -50,7 +50,7 @@ npx playwright show-report
 
 ### **Example Test Results**
 
-![Playwright Test Results](https://playwright.dev/img/playwright-report.png)
+![Playwright Test Results](https://drive.google.com/file/d/1k4pCtqVexqKAfrAG9KiZIE2X5gzS7VQ8/view?usp=sharing)
 
 _Note: This shows a sample Playwright HTML report. Your actual results will display your BoxCommerce test outcomes._
 
