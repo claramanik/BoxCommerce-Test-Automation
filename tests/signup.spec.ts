@@ -74,7 +74,9 @@ test.describe("SignUp Page", () => {
         .fill(SignUpTestData.credentials.correctPassword);
 
       // Submit form
-      await page.locator(SignUpTestData.selectors.signUpButton).click();
+      await page
+        .locator(SignUpTestData.selectors.signUpButton)
+        .click({ force: true });
       // Wait for welcome message with timeout
       let isVisible = false;
       while (!isVisible) {
