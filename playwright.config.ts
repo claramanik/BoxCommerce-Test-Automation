@@ -13,14 +13,14 @@ import { defineConfig, devices } from "@playwright/test";
  */
 export default defineConfig({
   testDir: "./tests",
-  /* Run tests in parallel for faster execution */
-  fullyParallel: true,
+  /* Run tests sequentially to avoid conflicts */
+  fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
-  /* Allow multiple workers for parallel execution */
-  workers: process.env.CI ? 2 : undefined,
+  /* Force single worker for sequential execution */
+  workers: 1,
   /* Maximum number of test files to run in parallel */
   maxFailures: process.env.CI ? 5 : 0,
   /* Timeout for each test */

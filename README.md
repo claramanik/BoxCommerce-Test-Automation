@@ -56,9 +56,35 @@ _Note: This shows a sample Playwright HTML report. Your actual results will disp
 
 ## 🧪 **Test Coverage**
 
-- **SignUp Form**: Complete signup flow, validation, error handling
-- **Social Media**: Facebook, Google, and X integration tests
-- **Form Validation**: Email format, password strength, coupon codes
+**Total: 36 test cases** covering comprehensive signup functionality
+
+### **SignUp Form Tests (8 test cases)**
+
+- **Initial Page Elements**: Verify all signup options are displayed
+- **Form Elements**: Check all required fields are present
+- **Happy Path**: Complete signup flow with valid data
+- **Form Navigation**: Manual signup form accessibility
+
+### **Form Validation Tests (25 test cases)**
+
+- **Email Validation**: Invalid email format, existing email detection
+- **Password Validation**: Weak password, too long password, password mismatch
+- **Phone Number**: Unique phone generation, existing phone detection
+- **Coupon Codes**: Invalid coupon code validation
+- **Field Interactions**: Tab navigation, field focus, error message display
+
+### **Social Media Integration Tests (3 test cases)**
+
+- **Facebook SignUp**: Verify Facebook login page opens
+- **Google SignUp**: Verify Google sign-in page opens
+- **X (Twitter) SignUp**: Verify X authorization page opens
+
+### **Execution Configuration**
+
+- **Sequential Execution**: Tests run with 1 worker to avoid conflicts
+- **Browser Support**: Chrome, Firefox, and Safari
+- **Test Isolation**: Each test generates unique data to prevent conflicts
+- **Retry Strategy**: Automatic retry for flaky tests
 
 ## 📁 **Project Structure**
 
@@ -68,25 +94,6 @@ tests/
 └── utils/
     ├── signup.data.ts      # Test data & selectors
     └── generators.ts       # Unique data generation
-```
-
-## 🔧 **Running Tests**
-
-```bash
-# All tests
-npm test
-
-# Direct Playwright command
-npx playwright test
-
-# Parallel execution
-npm run test:parallel
-
-# Specific test
-npx playwright test --grep="Happy Path"
-
-# Debug mode
-npm run test:debug
 ```
 
 ### **Handling Race Conditions**
